@@ -15,10 +15,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme['white-200']};
+    background: ${props => props.theme['WHITE-200']};
     color: ${props => props.theme['gray-300']};
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
+    
   }
 
   body, input, textarea, button {
