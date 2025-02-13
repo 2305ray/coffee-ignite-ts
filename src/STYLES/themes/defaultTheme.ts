@@ -23,4 +23,4 @@ export const defaultTheme = {
     'yellow-300': '#DBAC2C',
     'yellow-500': '#C47F17',
 
-  }
+  } //variavés
