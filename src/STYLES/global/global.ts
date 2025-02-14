@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     
+    
   }
 
   body, input, textarea, button {
