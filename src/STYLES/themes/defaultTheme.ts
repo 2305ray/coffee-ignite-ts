@@ -1,5 +1,5 @@
 export const defaultTheme = {
-  WHITE: '#FFFFFF',
+  'WHITE': '#FFFFFF',
   'WHITE-100': '#FAFAFA',
   'WHITE-200': '#F3F2F2',
   'WHITE-300': '#EDEDED',
@@ -15,7 +15,7 @@ export const defaultTheme = {
   'PURPLE-300': '#8047F8',
   'PURPLE-500': '#4B2995',
 
-  'yellow-100': '#F1E9C9',
-  'yellow-300': '#DBAC2C',
-  'yellow-500': '#C47F17',
+  'YELLOW-100': '#F1E9C9',
+  'YELLOW-300': '#DBAC2C',
+  'YELLOW-500': '#C47F17',
 } //variavés
