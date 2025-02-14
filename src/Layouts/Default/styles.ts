@@ -7,7 +7,7 @@ export const LayoutContainer = styled.div `
     margin: 5rem auto;
     padding: 2.5rem;
 
-   background: ${(props) => props.theme["PURPLE-500"]};
+ 
 
    
 `;
