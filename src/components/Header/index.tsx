@@ -11,7 +11,7 @@ export function Header() {
       <nav>
         <NavLink className="map" to="/" title="locale">
           <MapPin size={22} weight="fill" />
-          Porto Alegre
+          Porto Alegre, RS
         </NavLink>
 
         <NavLink className="cart" to="" title="cart">
