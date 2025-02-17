@@ -8,6 +8,7 @@ export function Router() {
     <Routes>
       <Route path='/' element={<DefaultLayout />}> {/* Layout para todas as páginas dentro dessa rota */}
         <Route path='/' element={<Home />} />
+        
       </Route>
     </Routes>
   )

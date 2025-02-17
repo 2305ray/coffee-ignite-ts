@@ -1,19 +1,23 @@
-import React from "react"
-import {  ContainerHeader } from "../Header/styles"
-import { MapPin, ShoppingCart } from "phosphor-react"
-import LogoCoffee from '../../assets/LogoCoffee.svg'
+import React from "react";
+import { ContainerHeader } from "../Header/styles";
+import { MapPin, ShoppingCart } from "phosphor-react";
+import LogoCoffee from "../../assets/LogoCoffee.svg";
+import { NavLink } from "react-router-dom";
 
 export function Header() {
-    return (
-        < ContainerHeader>
-           <img src={LogoCoffee} />
-            <nav>
-                <a href=""><MapPin size={22} weight="fill" />Porto alegre</a>
-                <a href="">
-                <ShoppingCart size={22} weight="fill" />
-                </a>
-            </nav>
-        </ ContainerHeader>
-        
-    )
+  return (
+    <ContainerHeader>
+      <img src={LogoCoffee} alt="Logo Coffee"  />
+      <nav>
+        <NavLink className="map" to="/" title="locale">
+          <MapPin size={22} weight="fill" />
+          Porto Alegre
+        </NavLink>
+
+        <NavLink className="cart" to="" title="cart">
+          <ShoppingCart size={22} weight="fill" />
+        </NavLink>
+      </nav>
+    </ContainerHeader>
+  );
 }
