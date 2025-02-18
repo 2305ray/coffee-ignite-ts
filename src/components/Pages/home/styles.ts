@@ -5,7 +5,7 @@ export const ContainerCoffee = styled.section`
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  
+  margin-bottom: 12rem;
   .content {   // Classe específica para o conteúdo
     display: flex;
     flex-direction: column;  // O conteúdo será empilhado verticalmente
