@@ -37,7 +37,7 @@ div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    
     height: 100%; 
 }
 
@@ -52,14 +52,14 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3rem;
+    width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;  /* Faz o fundo arredondado */
     color: white;  /* Cor do ícone */
 
   }
 
-
+ 
 .ShoppingCart {
     background-color: ${props => props.theme["YELLOW-500"]};
     color: ${props => props.theme["WHITE-100"]};
