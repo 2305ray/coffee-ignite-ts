@@ -11,6 +11,7 @@ export const ContainerHeader = styled.header`
   height: 4rem; /* Define uma altura fixa */
   z-index: 9999; /* Mantém o header acima do conteúdo */
   padding: 1rem 2rem;
+  margin-bottom: 5rem;
   
   img {
     width: 5.25rem;
@@ -52,6 +53,4 @@ export const ContainerHeader = styled.header`
   }
 `;
 
-export const MainContent = styled.main`
-  padding-top: 5rem; /* Ajuste para a altura do header */
-`;
+
