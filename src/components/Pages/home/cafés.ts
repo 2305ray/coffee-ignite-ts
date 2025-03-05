@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const ComprasDeCafe = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Criação de colunas flexíveis */
+  grid-template-columns: repeat(4); /* Criação de colunas flexíveis */
   gap: 2rem; /* Espaço entre os itens */
   width: 100%;
   padding: 3rem;
