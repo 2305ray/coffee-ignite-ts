@@ -1,11 +1,11 @@
 import React from "react";
 import café from '../../../assets/café.svg';
-import { ComprasDeCafe } from './cafés'
+import { ComprasDeCafe, ContainerCoffee} from './cafés'
 import { expressoTradicional, expressoAmericano, expressoCremoso, expressoGelado, 
   caféComLeite, latte, capuccino, macchiato, mocaccino, chocolateQuente, cubano,
   havaiano, arabe, irlandes } from './cafesSvg';
 import { Package, ShoppingCart, Timer, Coffee } from "phosphor-react";
-import { ContainerCoffee, QualitysBrandConatiner, SeparatorImage } from './styles';
+import { ContainerShop, QualitysBrandConatiner, SeparatorImage } from './styles';
 
 interface CoffeeProps {
   image: string;
@@ -125,11 +125,9 @@ export function BuyACoffee({ image, title, description, footer }: CoffeeProps) {
         <p>{description}</p>
         <footer>
           {footer}
-          <div>
-            <button type="button">-</button>
-            <span>1</span> 
-            <button type="button">+</button>
-          </div>
+          <button type="button">-</button>
+          <span>1</span> 
+          <button type="button">+</button>
         </footer>
       </div>
     </ComprasDeCafe>
@@ -139,7 +137,7 @@ export function BuyACoffee({ image, title, description, footer }: CoffeeProps) {
 export function Home() {
   return (
     <div>
-      <ContainerCoffee>
+      <ContainerShop>
         <SeparatorImage>
           <div className="content">
             <h1>Encontre o café perfeito para qualquer hora do dia</h1>
@@ -185,7 +183,7 @@ export function Home() {
           </div>
           <img src={café} alt="Imagem de um café" />
         </SeparatorImage>
-      </ContainerCoffee>
+      </ContainerShop>
 
       <ContainerCoffee>
         {coffeeList.map((coffee) => (

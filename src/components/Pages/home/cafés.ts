@@ -1,27 +1,28 @@
-// styles/BuyACoffee.styles.ts
 import styled from "styled-components";
 
 export const ComprasDeCafe = styled.div`
   display: grid;
-  grid-template-columns: repeat(4); /* Criação de colunas flexíveis */
-  gap: 2rem; /* Espaço entre os itens */
-  width: 100%;
-  padding: 3rem;
-
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas flexíveis */
+  gap: 1rem; /* Espaço entre os itens */
   text-align: center;
-  justify-content: center;
+  background: ${props => props.theme["WHITE-300"]};
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   align-items: center;
-
-  /* Estilo para o conteúdo dentro de cada item */
+  width: 20rem;  /* Definindo largura */
+  height: 25rem; /* Definindo altura */
+  
+  
   div {
-    background: ${props => props.theme["WHITE-300"]};
-    border-bottom-left-radius: 15px; /* Arredonda o canto inferior esquerdo */
-    border-bottom-right-radius: 15px; /* Arredonda o canto inferior direito */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque ao card */
-    padding: 2rem; /* Adiciona padding no interior */
-    display: flex;
-    flex-direction: column; /* Alinha o conteúdo dentro do item */
-    gap: 1rem; /* Espaço entre os elementos internos */
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+   justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column; /* Alinha o conteúdo dentro do item */
+ 
+  
   }
 
   header {
@@ -52,11 +53,13 @@ export const ComprasDeCafe = styled.div`
   }
 
   footer {
-    margin-top: 1rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Alinha os botões de incremento e decremento */
+  align-items: center; /* Garante que os elementos fiquem centralizados verticalmente */
+  padding-top: 1rem;
+  flex-grow: 0; /* Impede que o footer cresça mais do que o necessário */
   }
 
   @media (max-width: 768px) {
@@ -76,3 +79,25 @@ export const ComprasDeCafe = styled.div`
     }
   }
 `;
+
+export const ContainerCoffee = styled.div`
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: repeat(4, 1fr); /* Define 4 colunas de largura igual */
+  gap: 2rem; /* Espaço entre as colunas */
+  width: 100%;
+  margin: 0 auto; /* Centraliza o grid na tela */
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr); /* Reduz para 3 colunas em telas menores */
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas em telas ainda menores */
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+  }
+`;
+
