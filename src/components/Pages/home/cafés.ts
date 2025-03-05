@@ -1,28 +1,25 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export const ComprasDeCafe = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 colunas flexíveis */
   gap: 1rem; /* Espaço entre os itens */
   text-align: center;
-  background: ${props => props.theme["WHITE-300"]};
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
   align-items: center;
-  width: 20rem;  /* Definindo largura */
-  height: 25rem; /* Definindo altura */
+  justify-content: center;
+  margin-bottom: 2rem;
   
-  
-  div {
-  display: flex;
-  padding: 2rem;
-  align-items: center;
-   justify-content: center;
-  flex-wrap: wrap;
-  display: flex;
-  flex-direction: column; /* Alinha o conteúdo dentro do item */
- 
-  
+  div { 
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Alinha o conteúdo dentro do item */
+    background: ${props => props.theme["WHITE-300"]};
+    width: 20rem;  /* Definindo largura */
+    height: 23rem; /* Definindo altura */
   }
 
   header {
@@ -36,6 +33,7 @@ export const ComprasDeCafe = styled.div`
     max-width: 100%;
     height: auto;
     max-height: 120px;
+    margin-top: -80px; /* Move a imagem para cima */
   }
 
   h5 {
@@ -53,13 +51,22 @@ export const ComprasDeCafe = styled.div`
   }
 
   footer {
-  margin-top: 1rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between; /* Alinha os botões de incremento e decremento */
-  align-items: center; /* Garante que os elementos fiquem centralizados verticalmente */
-  padding-top: 1rem;
-  flex-grow: 0; /* Impede que o footer cresça mais do que o necessário */
+    padding: 2rem;
+    margin-top: 1rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: space-between; /* Alinha os botões de incremento e decremento */
+    align-items: center; /* Garante que os elementos fiquem centralizados verticalmente */
+    padding-top: 1rem;
+    flex-grow: 0; /* Impede que o footer cresça mais do que o necessário */
+  }
+
+  button {
+    background: ${props => props.theme["GRAY-100"]};
+    border-radius: 5px;
+    border: none;
+    width: 4.5rem;
+    height: 2.375rem;
   }
 
   @media (max-width: 768px) {
@@ -100,4 +107,3 @@ export const ContainerCoffee = styled.div`
     grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
   }
 `;
-

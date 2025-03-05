@@ -12,12 +12,14 @@ interface CoffeeProps {
   title: string;
   description: string;
   footer: string;
+  about?: string;
 }
 
 export const coffeeList = [
   {
     id: 1, 
     image: expressoTradicional, 
+    about: "Tradicional",
     title: "Expresso Tradicional",
     description: "O tradicional café feito com água quente e grãos moídos",
     footer: 'R$9,90'
@@ -25,6 +27,7 @@ export const coffeeList = [
   {
      id: 2,
      image: expressoAmericano,
+     about: "Tradicional",
      title: "Expresso Americano",
      description: "Expresso diluído, menos intenso que o tradicional",
      footer: 'R$9,90'
@@ -32,6 +35,7 @@ export const coffeeList = [
   { 
     id: 3,
     image: expressoCremoso, 
+    about: ["Tradicional"],
     title: "Expresso Cremoso", 
     description: "Café expresso tradicional com espuma cremosa", 
     footer: 'R$9,90' 
@@ -39,6 +43,7 @@ export const coffeeList = [
   { 
     id: 4,
     image: expressoGelado, 
+    about: ["Tradicional", "Geleado"],
     title: "Expresso Gelado", 
     description: "Bebida preparada com café expresso e cubos de gelo", 
     footer: 'R$9,90' 
@@ -114,20 +119,21 @@ export const coffeeList = [
   }
 ];
 
-export function BuyACoffee({ image, title, description, footer }: CoffeeProps) {
+export function BuyACoffee({ image, description, title, about, footer }: CoffeeProps) {
   return (
     <ComprasDeCafe>
       <div>
         <header>
           <img src={image} alt={`Imagem do ${title}`} />
         </header>
+        <p>{about}</p>
         <h5>{title}</h5>
         <p>{description}</p>
         <footer>
           {footer}
-          <button type="button">-</button>
-          <span>1</span> 
-          <button type="button">+</button>
+
+            <button type="button">- <span>1</span> +</button>
+            
         </footer>
       </div>
     </ComprasDeCafe>
@@ -190,6 +196,7 @@ export function Home() {
           <BuyACoffee 
             key={coffee.id}
             image={coffee.image}
+            about={coffee.about}
             title={coffee.title}
             description={coffee.description}
             footer={coffee.footer}
