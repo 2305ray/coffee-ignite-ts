@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 
 export const ComprasDeCafe = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas flexíveis */
+  grid-template-columns: repeat(4, 1fr) ; /* 4 colunas flexíveis */
   gap: 1rem; /* Espaço entre os itens */
   text-align: center;
   align-items: center;
@@ -51,7 +51,7 @@ export const ComprasDeCafe = styled.div`
     margin-bottom: 1rem;
   }
 
-  footer {
+  section {
     padding: 2rem;
     margin-top: 1rem;
     gap: 1rem;
@@ -69,6 +69,7 @@ export const ComprasDeCafe = styled.div`
     width: 4.5rem;
     height: 2.375rem;
   }
+
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr; /* Em telas menores, um item por linha */
@@ -95,6 +96,7 @@ export const ContainerCoffee = styled.div`
   gap: 2rem; /* Espaço entre as colunas */
   width: 100%;
   margin: 0 auto; /* Centraliza o grid na tela */
+  
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr); /* Reduz para 3 colunas em telas menores */
@@ -108,3 +110,4 @@ export const ContainerCoffee = styled.div`
     grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
   }
 `;
+

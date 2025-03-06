@@ -5,7 +5,7 @@ import { expressoTradicional, expressoAmericano, expressoCremoso, expressoGelado
   caféComLeite, latte, capuccino, macchiato, mocaccino, chocolateQuente, cubano,
   havaiano, arabe, irlandes } from './cafesSvg';
 import { Package, ShoppingCart, Timer, Coffee } from "phosphor-react";
-import { ContainerShop, QualitysBrandConatiner, SeparatorImage } from './styles';
+import { ContainerShop, QualitysBrandConatiner, Rodape, SeparatorImage } from './styles';
 
 
 interface CoffeeProps {
@@ -131,13 +131,13 @@ export function BuyACoffee({ image, description, title, about, footer }: CoffeeP
         <p>{about}</p>
         <h5>{title}</h5>
         <p>{description}</p>
-        <footer>
+        <section>
           {footer}
-
             <button type="button">- <span>1</span> +</button>
-            
-        </footer>
+        </section>
+        
       </div>
+      
     </ComprasDeCafe>
   );
 }
@@ -205,6 +205,7 @@ export function Home() {
           />
         ))}
       </ContainerCoffee>
+      <Rodape> </Rodape>
     </div>
   );
 }

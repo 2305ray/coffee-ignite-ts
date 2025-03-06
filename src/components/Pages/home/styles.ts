@@ -98,10 +98,13 @@ export const QualitysBrandConatiner = styled.div`
     color: ${props => props.theme["WHITE-100"]};
   }
 
+
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;  /* Em telas pequenas, 1 item por linha */
   }
 `;
+
 
 export const SeparatorImage = styled.div`
   display: flex;
@@ -118,5 +121,13 @@ export const SeparatorImage = styled.div`
     align-items: center;
   }
 `;
+
+export const Rodape = styled.footer`
+  width: 100%;
+  min-height: 8rem; 
+  text-align: center;
+  
+`;
+
 
 

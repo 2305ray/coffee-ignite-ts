@@ -72,7 +72,7 @@ export const ContainerHeader = styled.header`
     }
 
      a.cart:hover svg {
-    color: ${(props) => props.theme["YELLOW-100"]}; /* Altere a cor do ícone ao passar o mouse */
+    color: ${(props) => props.theme["WHITE-200"]}; /* Altere a cor do ícone ao passar o mouse */
 }
   }
 `;

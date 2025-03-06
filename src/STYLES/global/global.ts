@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
- * {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
   :focus {
     outline: 0;
     box-shadow: 0 0 0 2px ${(props) => props.theme['YELLOW-500']};
-  
   }
 
   body {
@@ -18,19 +17,24 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme['GRAY-300']};
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
-     padding-top: 9rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da janela */
+    padding-top: 9rem; /* Espaço no topo, ajuste conforme necessário */
   }
 
-body, html {
-  height: 100%;
-}
+  html, body {
+    height: 100%; /* Garante que o html e o body ocupem toda a altura */
+  }
 
+
+  
 
   body, input, textarea, button {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1rem;
-   
   }
-  
+
+ 
 `
