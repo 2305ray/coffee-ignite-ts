@@ -13,15 +13,15 @@ export const ContainerHeader = styled.header`
   z-index: 9999; /* Mantém o header acima do conteúdo */
   
   width: 100%;
-  height: 7rem; /* Define uma altura fixa */
+  height: 9rem; /* Define uma altura fixa */
   gap: 25rem;
   padding: 1rem 2rem;
   margin-bottom: 5rem;
  
 
   img {
-    width: 5.25rem;
-    height: 2.5rem;
+    width: 6rem;
+    height: 6rem;
   }
 
   nav {

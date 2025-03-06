@@ -1,11 +1,12 @@
 import React from "react";
 import café from '../../../assets/café.svg';
-import { ComprasDeCafe, ContainerCoffee} from './cafés'
+import { ComprasDeCafe, ContainerCoffee } from './cafés'
 import { expressoTradicional, expressoAmericano, expressoCremoso, expressoGelado, 
   caféComLeite, latte, capuccino, macchiato, mocaccino, chocolateQuente, cubano,
   havaiano, arabe, irlandes } from './cafesSvg';
 import { Package, ShoppingCart, Timer, Coffee } from "phosphor-react";
 import { ContainerShop, QualitysBrandConatiner, SeparatorImage } from './styles';
+
 
 interface CoffeeProps {
   image: string;
@@ -121,6 +122,7 @@ export const coffeeList = [
 
 export function BuyACoffee({ image, description, title, about, footer }: CoffeeProps) {
   return (
+
     <ComprasDeCafe>
       <div>
         <header>

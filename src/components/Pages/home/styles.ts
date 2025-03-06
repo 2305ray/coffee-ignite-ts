@@ -1,28 +1,35 @@
 import styled from "styled-components";
 
+
+
 export const ContainerShop = styled.section`
   display: flex;
   flex-wrap: wrap;  /* Permitindo que os itens se quebrem em várias linhas */
   width: 100%;
   align-items: center;
   margin-bottom: 12rem;
+  background-image: url(  "../../../assets/Background.png");
+  background-size: cover;  /* Faz o fundo cobrir todo o espaço */
+  background-position: center;  /* Centraliza a imagem de fundo */
+  height: 50vh; 
+ 
 
   .content {   // Classe específica para o conteúdo
     display: flex;
-    flex-direction: column;  // O conteúdo será empilhado verticalmente
+    flex-direction: column;  
     width: 45%; 
     
   }
 
   h1 {
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: ${props => props.theme["GRAY-500"]};
     font-family: 'Baloo 2', sans-serif;
   }
 
   h4 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 400;
     margin-top: 0.875rem;
     margin-bottom: 3rem;
@@ -50,13 +57,15 @@ export const QualitysBrandConatiner = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    
   }
 
   p {
+    font-size: 1.2rem;
     display: flex;
     gap: 0.875rem;
     align-items: center;
+    white-space: nowrap
   }
 
   .ShoppingCart, .Timer, .Package, .Coffee {
