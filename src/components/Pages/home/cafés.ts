@@ -11,8 +11,8 @@ export const ComprasDeCafe = styled.div`
   margin-bottom: 2rem;
   
   div { 
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
     display: flex;
     padding: 2rem;
     align-items: center;

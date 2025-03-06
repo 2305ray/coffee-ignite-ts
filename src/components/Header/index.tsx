@@ -10,12 +10,12 @@ export function Header() {
       <img src={LogoCoffee}alt="Logo Coffee"  />
       <nav>
         <NavLink className="map" to="/" title="locale">
-          <MapPin size={22} weight="fill" />
+          <MapPin size={28} weight="fill" />
           Porto Alegre, RS
         </NavLink>
 
         <NavLink className="cart" to="" title="cart">
-          <ShoppingCart size={22} weight="fill" />
+          <ShoppingCart size={28} weight="fill" />
         </NavLink>
       </nav>
     </ContainerHeader>

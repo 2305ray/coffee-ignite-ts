@@ -51,7 +51,7 @@ export const QualitysBrandConatiner = styled.div`
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   gap: 2rem;
-  
+  margin-top: 2rem;
 
   div {
     display: flex;
@@ -108,6 +108,10 @@ export const SeparatorImage = styled.div`
   justify-content: space-between;
   width: 100%;
   align-items: center;
+
+  img {
+    width: 38rem;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;

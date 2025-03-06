@@ -23,7 +23,6 @@ export const GlobalStyle = createGlobalStyle`
 
 body, html {
   height: 100%;
-  overflow-y: auto;
 }
 
 
