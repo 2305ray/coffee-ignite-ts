@@ -12,7 +12,7 @@ interface CoffeeProps {
   title: string;
   description: string;
   footer: string;
-  about?: string;
+  about?: string | string[];
 }
 
 export const coffeeList = [

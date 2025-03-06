@@ -1,18 +1,24 @@
 import { styled } from "styled-components";
 
 export const ContainerHeader = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background: ${(props) => props.theme['WHITE-200']};
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 4rem; /* Define uma altura fixa */
   z-index: 9999; /* Mantém o header acima do conteúdo */
+  
+  width: 100%;
+  height: 7rem; /* Define uma altura fixa */
+  gap: 25rem;
   padding: 1rem 2rem;
   margin-bottom: 5rem;
-  
+ 
+
   img {
     width: 5.25rem;
     height: 2.5rem;
@@ -21,7 +27,7 @@ export const ContainerHeader = styled.header`
   nav {
     display: flex;
     gap: 1rem;
-
+    
     a {
         display: flex;
         align-items: center;
@@ -53,4 +59,7 @@ export const ContainerHeader = styled.header`
   }
 `;
 
+export const MainContent = styled.main`
+  padding-top: 6.5rem; /* Adiciona um espaçamento igual à altura do header */
+`;
 

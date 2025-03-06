@@ -18,9 +18,14 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme['GRAY-300']};
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
-    padding-bottom: 6rem;
-    
+     padding-top: 9rem;
   }
+
+body, html {
+  height: 100%;
+  overflow-y: auto;
+}
+
 
   body, input, textarea, button {
     font-family: 'Roboto', sans-serif;
