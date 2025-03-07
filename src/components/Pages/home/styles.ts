@@ -7,7 +7,7 @@ export const ContainerShop = styled.section`
   flex-wrap: wrap;  /* Permitindo que os itens se quebrem em várias linhas */
   width: 100%;
   align-items: center;
-  margin-bottom: 12rem;
+  margin-bottom: 9rem;
   margin-top: 7rem;
 
   &::before {
@@ -16,12 +16,12 @@ export const ContainerShop = styled.section`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 95%;
     background-image: url(${Background});
     background-size: cover;
     background-position: center;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%);
     opacity: 90%;
     z-index: -1;
 

@@ -1,14 +1,25 @@
 import { styled } from "styled-components";
 
 
+export const ContainerAll = styled.div`
+display: flex; 
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 6rem;
+  font-weight: 800;
+  color: ${props => props.theme["GRAY-400"]};
+}
+`
+
 export const ComprasDeCafe = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr) ; /* 4 colunas flexíveis */
-  gap: 1rem; /* Espaço entre os itens */
   text-align: center;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+ 
   
   div { 
     border-top-right-radius: 50px;
@@ -21,6 +32,7 @@ export const ComprasDeCafe = styled.div`
     background: ${props => props.theme["WHITE-300"]};
     width: 20rem;  /* Definindo largura */
     height: 23rem; /* Definindo altura */
+    box-shadow: ${props => props.theme["GRAY-100"]} 0px 0px 3px
   }
 
   header {
@@ -49,26 +61,63 @@ export const ComprasDeCafe = styled.div`
     font-size: 1rem;
     color: ${props => props.theme["GRAY-200"]};
     margin-bottom: 1rem;
+ 
+    &.about{
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      color: ${props => props.theme["YELLOW-500"]};
+      height: 2rem;
+      width: 5rem;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      white-space: nowrap;
+      
+      .tag-item {
+        padding: 4px 10px;
+        border-radius: 15px;
+        background: ${props => props.theme["YELLOW-100"]};
+      }
+    }
   }
+  
 
   section {
-    padding: 2rem;
     margin-top: 1rem;
-    gap: 1rem;
+    gap: 0.7rem;
     display: flex;
     justify-content: space-between; /* Alinha os botões de incremento e decremento */
     align-items: center; /* Garante que os elementos fiquem centralizados verticalmente */
     padding-top: 1rem;
     flex-grow: 0; /* Impede que o footer cresça mais do que o necessário */
+
+    p {
+      align-items: center;
+      justify-content: center;
+    }
+   
   }
 
   button {
     background: ${props => props.theme["GRAY-100"]};
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
     width: 4.5rem;
-    height: 2.375rem;
+    height: 3rem;
+    opacity: 0.7;
+    font-size: 1.2rem;
+
+    
   }
+    .ShoppingCart {
+      color: ${props => props.theme["WHITE-100"]};
+      background: ${props => props.theme["PURPLE-500"]};
+      width: 3rem;
+      height: 3rem;
+      opacity: 1;
+      padding: 0.6rem;
+    }
 
 
   @media (max-width: 768px) {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import café from '../../../assets/café.svg';
-import { ComprasDeCafe, ContainerCoffee } from './cafés'
+import { ComprasDeCafe, ContainerCoffee, ContainerAll } from './cafés'
 import { expressoTradicional, expressoAmericano, expressoCremoso, expressoGelado, 
   caféComLeite, latte, capuccino, macchiato, mocaccino, chocolateQuente, cubano,
   havaiano, arabe, irlandes } from './cafesSvg';
@@ -13,110 +13,121 @@ interface CoffeeProps {
   title: string;
   description: string;
   footer: string;
-  about?: string | string[];
+  about?: string[];
 }
+
 
 export const coffeeList = [
   {
     id: 1, 
     image: expressoTradicional, 
-    about: "Tradicional",
+    about: ["TRADICIONAL"],
     title: "Expresso Tradicional",
     description: "O tradicional café feito com água quente e grãos moídos",
-    footer: 'R$9,90'
+    footer: '9,90'
   },
   {
      id: 2,
      image: expressoAmericano,
-     about: "Tradicional",
+     about: ["TRADICIONAL"],
      title: "Expresso Americano",
      description: "Expresso diluído, menos intenso que o tradicional",
-     footer: 'R$9,90'
+     footer: '9,90'
   },
   { 
     id: 3,
     image: expressoCremoso, 
-    about: ["Tradicional"],
+    about: ["TRADICIONAL"],
     title: "Expresso Cremoso", 
     description: "Café expresso tradicional com espuma cremosa", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 4,
     image: expressoGelado, 
-    about: ["Tradicional", "Geleado"],
+    about: ["TRADICIONAL", "GELADO"],
     title: "Expresso Gelado", 
     description: "Bebida preparada com café expresso e cubos de gelo", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 5,
     image: caféComLeite, 
+    about: ["TRADICIONAL", "COM LEITE"],
     title: "Café com Leite", 
     description: "Meio a meio de expresso tradicional com leite vaporizado", 
-    footer: 'R$9,90' },
+    footer: '9,90' },
   { 
     id: 6,
     image: latte, 
+    about: ["TRADICIONAL", "COM LEITE"],
     title: "Latte", 
     description: "Uma dose de café expresso com o dobro de leite e espuma cremosa", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 7,
     image: capuccino, 
+    about: ["TRADICIONAL", "COM LEITE"],
     title: "Capuccino", 
     description: "Bebida com canela feita de doses iguais de café, leite e espuma", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 8,
     image: macchiato, 
+    about: ["TRADICIONAL", "COM LEITE"],
     title: "Macchiato", 
     description: "Café expresso misturado com um pouco de leite quente e espuma", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 9,
     image: mocaccino, 
+    about: ["TRADICIONAL", "COM LEITE"],
     title: "Mocaccino", 
     description: "Café expresso com calda de chocolate, pouco leite e espuma", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 10,
     image: chocolateQuente, 
+    about: ["TRADICIONAL", "COM LEITE"],
     title: "Chocolate Quente", 
     description: "Bebida feita com chocolate dissolvido no leite quente e café", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 11,
     image: cubano, 
+    about: ["ESPECIAL", "ALCOÓLICO", "GELADO"],
     title: "Cubano", 
     description: "Drink gelado de café expresso com rum, creme de leite e hortelã", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 12,
-    image: havaiano, 
+    image: havaiano,
+    about: ["ESPECIAL"], 
     title: "Havaiano", 
     description: "Bebida adocicada preparada com café e leite de coco", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 13,
     image: arabe, 
+    about: ["ESPECIAL"],
     title: "Árabe", 
     description: "Bebida preparada com grãos de café árabe e especiarias", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   },
   { 
     id: 14,
     image: irlandes, 
+    about: ["ESPECIAL", "ALCOÓLICO"],
     title: "Irlandês", 
     description: "Bebida a base de café, uísque irlandês, açúcar e chantilly", 
-    footer: 'R$9,90' 
+    footer: '9,90' 
   }
 ];
 
@@ -124,22 +135,31 @@ export function BuyACoffee({ image, description, title, about, footer }: CoffeeP
  
   return (
 
+
     <ComprasDeCafe>
       <div>
         <header>
           <img src={image} alt={`Imagem do ${title}`} />
         </header>
-        <p>{about}</p>
+       <p className="about">
+          {about?.map((tag) => (
+            <span key={tag} className="tag-item">{tag}</span> 
+          ))}
+        </p>
         <h5>{title}</h5>
         <p>{description}</p>
         <section>
-          {footer}
+            <p>R${footer}</p>
             <button type="button">- <span>1</span> +</button>
+            <button className="ShoppingCart" type="submit">
+              <ShoppingCart size={29}  weight="fill"/>
+            </button>
         </section>
         
       </div>
       
     </ComprasDeCafe>
+  
   );
 }
 
@@ -192,9 +212,14 @@ export function Home() {
           </div>
           <img src={café} alt="Imagem de um café" />
         </SeparatorImage>
+        
       </ContainerShop>
 
+        <ContainerAll>
+          <h1>Nossos Cafés</h1>
+        </ContainerAll>
       <ContainerCoffee>
+  
         {coffeeList.map((coffee) => (
           <BuyACoffee 
             key={coffee.id}
@@ -207,6 +232,9 @@ export function Home() {
         ))}
       </ContainerCoffee>
       <Rodape> </Rodape>
-    </div>
+   
+
+     
+      </div>
   );
 }
