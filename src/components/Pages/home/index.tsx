@@ -13,7 +13,7 @@ interface CoffeeProps {
   title: string;
   description: string;
   footer: string;
-  about?: string[];
+  categories: string[];
 }
 
 
@@ -21,7 +21,7 @@ export const coffeeList = [
   {
     id: 1, 
     image: expressoTradicional, 
-    about: ["TRADICIONAL"],
+    categories: ["TRADICIONAL"],
     title: "Expresso Tradicional",
     description: "O tradicional café feito com água quente e grãos moídos",
     footer: '9,90'
@@ -29,7 +29,7 @@ export const coffeeList = [
   {
      id: 2,
      image: expressoAmericano,
-     about: ["TRADICIONAL"],
+     categories: ["TRADICIONAL"],
      title: "Expresso Americano",
      description: "Expresso diluído, menos intenso que o tradicional",
      footer: '9,90'
@@ -37,7 +37,7 @@ export const coffeeList = [
   { 
     id: 3,
     image: expressoCremoso, 
-    about: ["TRADICIONAL"],
+    categories: ["TRADICIONAL"],
     title: "Expresso Cremoso", 
     description: "Café expresso tradicional com espuma cremosa", 
     footer: '9,90' 
@@ -45,7 +45,7 @@ export const coffeeList = [
   { 
     id: 4,
     image: expressoGelado, 
-    about: ["TRADICIONAL", "GELADO"],
+    categories: ["TRADICIONAL", "GELADO"],
     title: "Expresso Gelado", 
     description: "Bebida preparada com café expresso e cubos de gelo", 
     footer: '9,90' 
@@ -53,14 +53,14 @@ export const coffeeList = [
   { 
     id: 5,
     image: caféComLeite, 
-    about: ["TRADICIONAL", "COM LEITE"],
+    categories: ["TRADICIONAL", "COM LEITE"],
     title: "Café com Leite", 
     description: "Meio a meio de expresso tradicional com leite vaporizado", 
     footer: '9,90' },
   { 
     id: 6,
     image: latte, 
-    about: ["TRADICIONAL", "COM LEITE"],
+    categories: ["TRADICIONAL", "COM LEITE"],
     title: "Latte", 
     description: "Uma dose de café expresso com o dobro de leite e espuma cremosa", 
     footer: '9,90' 
@@ -68,7 +68,7 @@ export const coffeeList = [
   { 
     id: 7,
     image: capuccino, 
-    about: ["TRADICIONAL", "COM LEITE"],
+    categories: ["TRADICIONAL", "COM LEITE"],
     title: "Capuccino", 
     description: "Bebida com canela feita de doses iguais de café, leite e espuma", 
     footer: '9,90' 
@@ -76,7 +76,7 @@ export const coffeeList = [
   { 
     id: 8,
     image: macchiato, 
-    about: ["TRADICIONAL", "COM LEITE"],
+    categories: ["TRADICIONAL", "COM LEITE"],
     title: "Macchiato", 
     description: "Café expresso misturado com um pouco de leite quente e espuma", 
     footer: '9,90' 
@@ -84,7 +84,7 @@ export const coffeeList = [
   { 
     id: 9,
     image: mocaccino, 
-    about: ["TRADICIONAL", "COM LEITE"],
+    categories: ["TRADICIONAL", "COM LEITE"],
     title: "Mocaccino", 
     description: "Café expresso com calda de chocolate, pouco leite e espuma", 
     footer: '9,90' 
@@ -92,7 +92,7 @@ export const coffeeList = [
   { 
     id: 10,
     image: chocolateQuente, 
-    about: ["TRADICIONAL", "COM LEITE"],
+    categories: ["TRADICIONAL", "COM LEITE"],
     title: "Chocolate Quente", 
     description: "Bebida feita com chocolate dissolvido no leite quente e café", 
     footer: '9,90' 
@@ -100,7 +100,7 @@ export const coffeeList = [
   { 
     id: 11,
     image: cubano, 
-    about: ["ESPECIAL", "ALCOÓLICO", "GELADO"],
+    categories: ["ESPECIAL", "ALCOÓLICO", "GELADO"],
     title: "Cubano", 
     description: "Drink gelado de café expresso com rum, creme de leite e hortelã", 
     footer: '9,90' 
@@ -108,7 +108,7 @@ export const coffeeList = [
   { 
     id: 12,
     image: havaiano,
-    about: ["ESPECIAL"], 
+    categories: ["ESPECIAL"], 
     title: "Havaiano", 
     description: "Bebida adocicada preparada com café e leite de coco", 
     footer: '9,90' 
@@ -116,7 +116,7 @@ export const coffeeList = [
   { 
     id: 13,
     image: arabe, 
-    about: ["ESPECIAL"],
+    categories: ["ESPECIAL"],
     title: "Árabe", 
     description: "Bebida preparada com grãos de café árabe e especiarias", 
     footer: '9,90' 
@@ -124,14 +124,14 @@ export const coffeeList = [
   { 
     id: 14,
     image: irlandes, 
-    about: ["ESPECIAL", "ALCOÓLICO"],
+    categories: ["ESPECIAL", "ALCOÓLICO"],
     title: "Irlandês", 
     description: "Bebida a base de café, uísque irlandês, açúcar e chantilly", 
     footer: '9,90' 
   }
 ];
 
-export function BuyACoffee({ image, description, title, about, footer }: CoffeeProps) {
+export function BuyACoffee({ image, description, title, categories, footer }: CoffeeProps) {
  
   return (
 
@@ -141,8 +141,8 @@ export function BuyACoffee({ image, description, title, about, footer }: CoffeeP
         <header>
           <img src={image} alt={`Imagem do ${title}`} />
         </header>
-       <p className="about">
-          {about?.map((tag) => (
+       <p className="categories">
+          {categories?.map((tag) => (
             <span key={tag} className="tag-item">{tag}</span> 
           ))}
         </p>
@@ -224,7 +224,7 @@ export function Home() {
           <BuyACoffee 
             key={coffee.id}
             image={coffee.image}
-            about={coffee.about}
+            categories={coffee.categories}
             title={coffee.title}
             description={coffee.description}
             footer={coffee.footer}

@@ -62,7 +62,7 @@ export const ComprasDeCafe = styled.div`
     color: ${props => props.theme["GRAY-200"]};
     margin-bottom: 1rem;
  
-    &.about{
+    &.categories{
       font-size: 0.8rem;
       font-weight: 700;
       display: flex;
