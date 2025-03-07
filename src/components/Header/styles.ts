@@ -1,22 +1,26 @@
 import { styled } from "styled-components";
 
-export const ContainerHeader = styled.header`
+interface HeaderProps {
+  isScrolled: boolean;
+}
+
+export const ContainerHeader = styled.header<HeaderProps>`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  
+  z-index: 9999; /* Mantém o header acima do conteúdo */
+
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: ${(props) => props.theme['WHITE-200']};
-  z-index: 9999; /* Mantém o header acima do conteúdo */
+  background: ${(props) => (props.isScrolled ? props.theme['WHITE-200'] : "transparent")};
+  box-shadow: ${(props) => (props.isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none")};
   
   width: 100%;
   height: 9rem; /* Define uma altura fixa */
   gap: 25rem;
   padding: 1rem 2rem;
-  margin-bottom: 5rem;
  
 
   img {
@@ -75,9 +79,6 @@ export const ContainerHeader = styled.header`
     color: ${(props) => props.theme["WHITE-200"]}; /* Altere a cor do ícone ao passar o mouse */
 }
   }
-`;
 
-export const MainContent = styled.main`
-  padding-top: 6.5rem; /* Adiciona um espaçamento igual à altura do header */
 `;
 

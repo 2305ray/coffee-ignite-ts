@@ -36,5 +36,9 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
 
+  h1 {
+        font-family: 'Baloo 2', sans-serif;
+        font-weight: 800;
+      }
  
 `

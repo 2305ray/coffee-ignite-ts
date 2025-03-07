@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import Background from "../../../assets/Background.png";
 
 
 export const ContainerShop = styled.section`
@@ -8,11 +8,28 @@ export const ContainerShop = styled.section`
   width: 100%;
   align-items: center;
   margin-bottom: 12rem;
-  background-image: url(  "../../../assets/Background.png");
-  background-size: cover;  /* Faz o fundo cobrir todo o espaço */
-  background-position: center;  /* Centraliza a imagem de fundo */
-  height: 50vh; 
+  margin-top: 7rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(${Background});
+    background-size: cover;
+    background-position: center;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    opacity: 90%;
+    z-index: -1;
+
+  margin-top: 0;
+  padding-top: 0;
  
+
+  }
 
   .content {   // Classe específica para o conteúdo
     display: flex;
@@ -22,10 +39,11 @@ export const ContainerShop = styled.section`
   }
 
   h1 {
-    font-weight: bold;
+    
     font-size: 3.5rem;
     color: ${props => props.theme["GRAY-500"]};
-    font-family: 'Baloo 2', sans-serif;
+    
+    
   }
 
   h4 {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import café from '../../../assets/café.svg';
 import { ComprasDeCafe, ContainerCoffee } from './cafés'
 import { expressoTradicional, expressoAmericano, expressoCremoso, expressoGelado, 
@@ -121,6 +121,7 @@ export const coffeeList = [
 ];
 
 export function BuyACoffee({ image, description, title, about, footer }: CoffeeProps) {
+ 
   return (
 
     <ComprasDeCafe>
