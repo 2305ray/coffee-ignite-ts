@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import café from '../../../assets/café.svg';
-import { ComprasDeCafe, ContainerCoffee, ContainerAll } from './cafés'
+import { ComprasDeCafe, ContainerCoffee, ContainerAll, QuantityControl, Content } from './ListaDeCafés'
 import { expressoTradicional, expressoAmericano, expressoCremoso, expressoGelado, 
   caféComLeite, latte, capuccino, macchiato, mocaccino, chocolateQuente, cubano,
   havaiano, arabe, irlandes } from './cafesSvg';
 import { Package, ShoppingCart, Timer, Coffee } from "phosphor-react";
 import { ContainerShop, QualitysBrandConatiner, Rodape, SeparatorImage } from './styles';
-
+import { AdicionarItem } from './cafés';
 
 interface CoffeeProps {
   image: string;
@@ -137,7 +137,7 @@ export function BuyACoffee({ image, description, title, categories, footer }: Co
 
 
     <ComprasDeCafe>
-      <div>
+      <Content>
         <header>
           <img src={image} alt={`Imagem do ${title}`} />
         </header>
@@ -150,13 +150,13 @@ export function BuyACoffee({ image, description, title, categories, footer }: Co
         <p>{description}</p>
         <section>
             <p>R${footer}</p>
-            <button type="button">- <span>1</span> +</button>
+            <AdicionarItem />
             <button className="ShoppingCart" type="submit">
               <ShoppingCart size={29}  weight="fill"/>
             </button>
         </section>
         
-      </div>
+      </Content>
       
     </ComprasDeCafe>
   

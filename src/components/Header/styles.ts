@@ -60,7 +60,10 @@ export const ContainerHeader = styled.header<HeaderProps>`
 
      a.cart:hover {
     background: ${(props) => props.theme["YELLOW-300"]}; /* Altere a cor de fundo ao passar o mouse */
-    
+     
+     &:active {
+      transform: scale(0.9); /* Reduz um pouco o ícone ao clicar */
+    }
 }
 
     a.cart:focus {
