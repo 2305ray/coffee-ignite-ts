@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 interface HeaderProps {
-  isScrolled: boolean;
+  $isScrolled: boolean;
 }
 
 export const ContainerHeader = styled.header<HeaderProps>`
@@ -14,8 +14,8 @@ export const ContainerHeader = styled.header<HeaderProps>`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: ${(props) => (props.isScrolled ? props.theme['WHITE-200'] : "transparent")};
-  box-shadow: ${(props) => (props.isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none")};
+  background: ${(props) => (props.$isScrolled ? props.theme['WHITE-200'] : "transparent")};
+  box-shadow: ${(props) => (props.$isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none")};
   
   width: 100%;
   height: 9rem; /* Define uma altura fixa */
@@ -55,10 +55,12 @@ export const ContainerHeader = styled.header<HeaderProps>`
     a.cart {
         background: ${(props) => props.theme["YELLOW-100"]};
         transition: background-color 0.3s ease; /* Suaviza a transição do hover */
+      
     }
 
      a.cart:hover {
     background: ${(props) => props.theme["YELLOW-300"]}; /* Altere a cor de fundo ao passar o mouse */
+    
 }
 
     a.cart:focus {

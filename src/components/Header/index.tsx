@@ -17,7 +17,7 @@ const [isScrolled, setIsScrolled] = useState(false);
   }, []);
 
   return (
-    <ContainerHeader isScrolled={isScrolled} className={isScrolled ? 'containerScrolled' : 'containerNotScrolled'}>
+    <ContainerHeader $isScrolled={isScrolled} className={isScrolled ? 'containerScrolled' : 'containerNotScrolled'}>
   <img src={LogoCoffee} alt="Logo Coffee" />
   <nav>
     <NavLink className="map" to="/" title="locale">

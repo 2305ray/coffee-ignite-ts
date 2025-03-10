@@ -1,3 +1,4 @@
+import { ShoppingCart } from 'phosphor-react';
 import { styled } from "styled-components";
 
 
@@ -117,7 +118,26 @@ export const ComprasDeCafe = styled.div`
       height: 3rem;
       opacity: 1;
       padding: 0.6rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
     }
+
+    .ShoppingCart:hover {
+      color: ${props => props.theme["WHITE-100"]};
+      background: ${props => props.theme["PURPLE-300"]};
+      transform: scale(1.1);
+      cursor: pointer;
+      box-shadow: ${(props) => props.theme["PURPLE-500"]} 0 4px 5px;
+    }
+
+      .ShoppingCart:focus {
+        outline: none;
+         box-shadow: ${(props) => props.theme["PURPLE-500"]} 0 0 8px; 
+      }
+
+    .ShoppingCart:active {
+      transform: translateY(2px);
+      box-shadow: ${(props) => props.theme["PURPLE-500"]} 0 2px 0;
+}
 
 
   @media (max-width: 768px) {
