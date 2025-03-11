@@ -21,12 +21,12 @@ const [isScrolled, setIsScrolled] = useState(false);
   <img src={LogoCoffee} alt="Logo Coffee" />
   <nav>
     <NavLink className="map" to="/" title="locale">
-      <MapPin size={28} weight="fill" />
+      <MapPin size={23} weight="fill" />
       Porto Alegre, RS
     </NavLink>
 
     <NavLink className="cart" to="" title="cart">
-      <ShoppingCart size={28} weight="fill" />
+      <ShoppingCart size={23} weight="fill" />
     </NavLink>
   </nav>
 </ContainerHeader>

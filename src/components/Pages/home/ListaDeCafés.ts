@@ -36,9 +36,9 @@ export const ComprasDeCafe = styled.div`
 
   h5 {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 800;
     font-family: 'Baloo 2', sans-serif;
-    color: ${props => props.theme["GRAY-500"]};
+    color: ${props => props.theme["GRAY-300"]};
     margin-bottom: 0.5rem;
   }
 
@@ -46,6 +46,7 @@ export const ComprasDeCafe = styled.div`
     font-size: 1rem;
     color: ${props => props.theme["GRAY-200"]};
     margin-bottom: 1rem;
+
 
     &.categories {
       font-size: 0.8rem;
@@ -65,14 +66,30 @@ export const ComprasDeCafe = styled.div`
         background: ${props => props.theme["YELLOW-100"]};
       }
     }
+
   }
 
+  .paragraph{
+      color: ${props => props.theme["GRAY-300"]};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      font-size: 1.1rem;
+      margin-right: 1rem;
+
+       span {
+        color: ${props => props.theme["GRAY-300"]};
+        font-family: 'Baloo 2', sans-serif;
+        font-weight: 800;
+        font-size: 1.8rem;
+       }
+    }
+
   section {
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     gap: 0.7rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding-top: 1rem;
     flex-grow: 0;
   }
@@ -135,7 +152,7 @@ export const Content = styled.div`
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px;
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -147,7 +164,6 @@ export const Content = styled.div`
 
 export const ContainerCoffee = styled.div`
   display: grid;
-  align-items: flex-start;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   width: 100%;

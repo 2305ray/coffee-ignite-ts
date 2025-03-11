@@ -149,7 +149,11 @@ export function BuyACoffee({ image, description, title, categories, footer }: Co
         <h5>{title}</h5>
         <p>{description}</p>
         <section>
-            <p>R${footer}</p>
+            <p className="paragraph">R$
+              <span>
+                {footer}
+              </span>
+            </p>
             <AdicionarItem />
             <button className="ShoppingCart" type="submit">
               <ShoppingCart size={29}  weight="fill"/>
