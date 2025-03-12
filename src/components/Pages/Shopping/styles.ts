@@ -16,7 +16,7 @@ flex-direction:column;
 
 export const ContainerEnderecoEntrega =  styled.div`
   margin-top: 1rem;
-  display: flex; /* Para alinhar corretamente os elementos */
+  display: flex; 
   flex-direction: column;
   background: ${props => props.theme['WHITE-300']};
   padding: 3rem;
@@ -209,5 +209,106 @@ span{
     }
   }
 `
+
+
+
+export const ContainerSelectCoffees = styled.div`
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: ${props => props.theme["WHITE-300"]};
+  width: 40rem;
+  min-height: 30rem;
+  box-shadow: ${props => props.theme["GRAY-100"]} 0px 0px 3px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+
+  
+`;
+export const HeaderSelectCoffee = styled.div`
+  display: flex;
+  align-items: center; /* Alinha a imagem no centro verticalmente */
+  gap: 1rem; /* Espaço entre a imagem e o conteúdo */
+  width: 100%;
+`;
+
+export const CoffeeInfo = styled.div`
+  display: flex;
+  flex-direction: column; /* Para que os botões fiquem abaixo */
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const SelecionadosName = styled.div`
+  display: flex;
+  justify-content: space-between; /* Nome e preço lado a lado */
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+`;
+
+export const ButtonsContent = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  justify-content: flex-start; 
+  gap: 1rem;
+  margin-top: 0.5rem;
+
+
+  .QuantityControl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: ${props => props.theme["WHITE-500"]}; /* Mantém a harmonia do layout */
+    padding: 0.5rem;
+    border-radius: 8px;
+    width: 7rem;
+    height: 2.5rem;
+    gap: 0.5rem;
+
+    button {
+      display: flex;
+      background: none;
+      border: none;
+      padding: 2px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: ${props => props.theme["PURPLE-300"]};
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: ${props => props.theme["PURPLE-500"]};
+      }
+
+      &:focus-visible {
+        outline: none !important; /* Remover qualquer outline */
+        border: none !important;  /* Garantir que não tenha borda */
+      }
+
+      &:active {
+        transform: scale(0.9); /* Faz o ícone encolher um pouco ao clicar */
+      }
+    }
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  .remover {
+    border-radius: 8px;
+     background: ${props => props.theme["WHITE-500"]}; 
+     border: none;
+     color: ${props => props.theme["GRAY-300"]};
+  }
+`;
+
 
 

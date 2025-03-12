@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money} from 'phosphor-react';
+import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money, Trash, Minus, Plus} from 'phosphor-react';
 import { 
     ContainerCompletePedido, 
     Container, 
@@ -9,8 +9,15 @@ import {
     ContainerForm, 
     Input, 
     PagamentoSection, 
-    FormasDePagamento
+    FormasDePagamento,
+    ContainerSelectCoffees,
+    HeaderSelectCoffee,
+    CoffeeInfo,
+    SelecionadosName,
+    ButtonsContent,
 } from './styles';
+import { caféComLeite } from "../home/cafesSvg";
+
 
 export function Shopping() {
     return (
@@ -75,40 +82,52 @@ export function Shopping() {
             
             <section>
                 <h1>Cafés selecionados</h1>
-                <div>
+                <ContainerSelectCoffees>
                     <div>
-                        <img src="" alt="" />
-                        <div>
-                            <p>Café Especial</p>
-                            <p>Descrição do café</p>   
-                        </div>
-                        <div>
-                            <button type="button">Adicionar</button>
-                            <button type="button">Remover</button>
-                        </div>
+                        <HeaderSelectCoffee>
+                            <img src={caféComLeite} alt="" />
+
+                            <CoffeeInfo>
+                                <SelecionadosName>
+                                    <p>Expresso Tradicional</p>
+                                    <p className="price">R$ 30,00</p>
+                                </SelecionadosName>
+
+                                <ButtonsContent>
+                                    <div className="QuantityControl">
+                                        <button type="button"><Minus size={17} weight='bold' /></button>
+                                        <span>1</span>
+                                        <button type="button"><Plus size={17} weight='bold' /></button>
+                                    </div>
+                                
+                                    <button className="remover" type="button"><Trash size={20} />Remover</button>
+                                </ButtonsContent>
+                            </CoffeeInfo>
+                        </HeaderSelectCoffee>
+                        
                     </div>
 
                     <div>
                         <div>
-                            <p>Subtotal</p>
-                            <p>R$ 30,00</p>
+                            <p>Total de itens</p>
+                            <p>R$ 29,70</p>
                         </div>
 
                         <div>
-                            <p>Frete</p>
-                            <p>R$ 5,00</p>
+                            <p>Entrega</p>
+                            <p>R$ 3,50</p>
                         </div>
 
                         <div>
                             <p>Total</p>
-                            <p>R$ 35,00</p>
+                            <p>R$ 33,20</p>
                         </div>
 
                         <footer>
-                            <button type="submit">Finalizar Pedido</button>
+                            <button type="submit">Confirmar Pedido</button>
                         </footer>
                     </div>
-                </div>
+                </ContainerSelectCoffees>
             </section>
         </Container>
     );
