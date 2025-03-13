@@ -4,6 +4,7 @@ import { MapPin, ShoppingCart } from "phosphor-react";
 import LogoCoffee from "../../assets/LogoCoffee.svg";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../context/cartContext";
+import type { CartItem } from '../../context/cartContext'
 
 export function Header() {
 const [isScrolled, setIsScrolled] = useState(false);
@@ -28,11 +29,16 @@ const { cartItems } = useCart();
     </NavLink>
 
     <CartContainer>
-      <NavLink className="cart" to="" title="cart">
-        <ShoppingCart size={23} weight="fill" />
-        { cartItems.length > 0 && <CartCount>{cartItems.length}</CartCount> }
-      </NavLink>
-    </CartContainer>
+  <NavLink className="cart" to="" title="cart">
+    <ShoppingCart size={23} weight="fill" />
+  </NavLink>
+     {cartItems.length > 0 && (
+    <CartCount>
+      {cartItems.reduce((total: number, item: CartItem) => total + item.quantity, 0)}
+    </CartCount>
+  )}
+</CartContainer>
+
   </nav>
 </ContainerHeader>
 
