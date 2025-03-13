@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { ContainerHeader } from "../Header/styles";
+import { ContainerHeader, CartContainer, CartCount } from "../Header/styles";
 import { MapPin, ShoppingCart } from "phosphor-react";
 import LogoCoffee from "../../assets/LogoCoffee.svg";
 import { NavLink } from "react-router-dom";
+import { useCart } from "../../context/cartContext";
 
 export function Header() {
 const [isScrolled, setIsScrolled] = useState(false);
+const { cartItems } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,9 +27,12 @@ const [isScrolled, setIsScrolled] = useState(false);
       Porto Alegre, RS
     </NavLink>
 
-    <NavLink className="cart" to="" title="cart">
-      <ShoppingCart size={23} weight="fill" />
-    </NavLink>
+    <CartContainer>
+      <NavLink className="cart" to="" title="cart">
+        <ShoppingCart size={23} weight="fill" />
+        { cartItems.length > 0 && <CartCount>{cartItems.length}</CartCount> }
+      </NavLink>
+    </CartContainer>
   </nav>
 </ContainerHeader>
 

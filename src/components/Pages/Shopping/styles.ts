@@ -217,7 +217,7 @@ export const ContainerSelectCoffees = styled.div`
   border-bottom-left-radius: 50px;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 3rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -227,38 +227,70 @@ export const ContainerSelectCoffees = styled.div`
   box-shadow: ${props => props.theme["GRAY-100"]} 0px 0px 3px;
   margin-top: 1rem;
   transition: all 0.3s ease;
-
+  align-items: flex-start;
+  justify-content: flex-start;
   
 `;
+
+export const ContainerCafesSelecionados = styled.div`
+display:flex;
+align-items: flex-start;
+justify-content: flex-start;
+width: 100%;
+flex-direction: column; /* Adicione essa linha */
+`;
+
 export const HeaderSelectCoffee = styled.div`
   display: flex;
-  align-items: center; /* Alinha a imagem no centro verticalmente */
-  gap: 1rem; /* Espaço entre a imagem e o conteúdo */
   width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid ${props => props.theme["WHITE-500"]};
+  margin-bottom: 2rem;
+ & .image {
+  width: 10rem;
+  height: 5.5rem;
+ }
 `;
 
 export const CoffeeInfo = styled.div`
   display: flex;
   flex-direction: column; /* Para que os botões fiquem abaixo */
-  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
 `;
 
 export const SelecionadosName = styled.div`
   display: flex;
-  justify-content: space-between; /* Nome e preço lado a lado */
-  align-items: center;
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.3rem;
+  color: ${props => props.theme["GRAY-400"]};
+  flex-direction: row;
+  justify-content: space-between;
+  white-space: nowrap;
+  width: 100%;
+  p {
+    display: flex;
+    
+  }
+
+  & .price{
+    color: ${props => props.theme["GRAY-300"]};
+    font-family: 'Baloo 2';
+    font-weight: bold;
+    font-size: 1.4rem;
+    display: flex;
+    
+  }
+
 `;
 
 export const ButtonsContent = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   width: 100%;
-  justify-content: flex-start; 
   gap: 1rem;
+  justify-content: flex-start; 
   margin-top: 0.5rem;
+  
+
 
 
   .QuantityControl {
@@ -268,7 +300,7 @@ export const ButtonsContent = styled.div`
     background: ${props => props.theme["WHITE-500"]}; /* Mantém a harmonia do layout */
     padding: 0.5rem;
     border-radius: 8px;
-    width: 7rem;
+    width: 5rem;
     height: 2.5rem;
     gap: 0.5rem;
 
@@ -288,12 +320,12 @@ export const ButtonsContent = styled.div`
       }
 
       &:focus-visible {
-        outline: none !important; /* Remover qualquer outline */
-        border: none !important;  /* Garantir que não tenha borda */
+        outline: none !important; 
+        border: none !important;  
       }
 
       &:active {
-        transform: scale(0.9); /* Faz o ícone encolher um pouco ao clicar */
+        transform: scale(0.9); 
       }
     }
 
@@ -307,6 +339,22 @@ export const ButtonsContent = styled.div`
      background: ${props => props.theme["WHITE-500"]}; 
      border: none;
      color: ${props => props.theme["GRAY-300"]};
+     cursor: pointer;
+     align-items: center;
+     display: flex;
+     justify-content: center;
+     gap: 0.4rem;
+     transition: background 0.2s ease;
+     width: 7rem;
+
+      &:hover {
+        background: ${props => props.theme["GRAY-100"]};
+         color: ${props => props.theme["GRAY-500"]};
+      }
+
+      &:active {
+        transform: scale(0.9); 
+      }
   }
 `;
 

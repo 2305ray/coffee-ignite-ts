@@ -86,3 +86,22 @@ export const ContainerHeader = styled.header<HeaderProps>`
 
 `;
 
+export const CartContainer = styled.div`
+  position: relative;
+`;
+
+export const CartCount = styled.span`
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #C47F17;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

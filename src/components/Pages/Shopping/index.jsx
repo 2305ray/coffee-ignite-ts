@@ -15,8 +15,9 @@ import {
     CoffeeInfo,
     SelecionadosName,
     ButtonsContent,
+    ContainerCafesSelecionados,
 } from './styles';
-import { caféComLeite } from "../home/cafesSvg";
+import { coffeeList } from '../home/cafés'
 
 
 export function Shopping() {
@@ -82,30 +83,38 @@ export function Shopping() {
             
             <section>
                 <h1>Cafés selecionados</h1>
+
                 <ContainerSelectCoffees>
-                    <div>
-                        <HeaderSelectCoffee>
-                            <img src={caféComLeite} alt="" />
 
-                            <CoffeeInfo>
-                                <SelecionadosName>
-                                    <p>Expresso Tradicional</p>
-                                    <p className="price">R$ 30,00</p>
-                                </SelecionadosName>
+            {coffeeList.map((cafe) => (
+                <ContainerCafesSelecionados key={cafe.id}>
+                    <HeaderSelectCoffee>
+                    <img className="image" src={cafe.image} alt={cafe.title} />
 
-                                <ButtonsContent>
-                                    <div className="QuantityControl">
-                                        <button type="button"><Minus size={17} weight='bold' /></button>
-                                        <span>1</span>
-                                        <button type="button"><Plus size={17} weight='bold' /></button>
-                                    </div>
-                                
-                                    <button className="remover" type="button"><Trash size={20} />Remover</button>
-                                </ButtonsContent>
-                            </CoffeeInfo>
-                        </HeaderSelectCoffee>
-                        
-                    </div>
+                    <CoffeeInfo>
+                        <SelecionadosName>
+                        <p>{cafe.title}</p>
+                        <p className="price">{cafe.footer}</p>
+                        </SelecionadosName>    
+
+                        <ButtonsContent>
+                        <div className="QuantityControl">
+                            <button type="button"><Minus size={17} weight="bold" /></button>
+                            <span>{cafe.quantidade}</span>
+                            <button type="button"><Plus size={17} weight="bold" /></button>
+                        </div>
+
+                        <button className="remover" type="button">
+                            <Trash size={20} color="#8047F8" />
+                            Remover
+                        </button>
+                        </ButtonsContent>
+                    </CoffeeInfo>
+                    </HeaderSelectCoffee>
+                </ContainerCafesSelecionados>
+
+            ))}
+
 
                     <div>
                         <div>
