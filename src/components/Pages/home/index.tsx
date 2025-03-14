@@ -1,12 +1,13 @@
 import React from "react";
 import café from '../../../assets/café.svg';
 import { ComprasDeCafe, ContainerCoffee, ContainerAll, Content } from './ListaDeCafés';
-import { Package, ShoppingCart, Timer, Coffee, Minus, Plus } from "phosphor-react";
+import { Package, ShoppingCart, Timer, Coffee, Minus, Plus, Link } from "phosphor-react";
 import { ContainerShop, QualitysBrandConatiner, Rodape, SeparatorImage } from './styles';
 import { coffeeList } from "./cafés";
 import type { CoffeeProps } from "./cafés";
 import { useCart } from '../../../context/cartContext';
 import { QuantityControls } from '../../actions/quantityControls/QuantityControls';
+import { NavLink } from "react-router-dom";
 
 export function BuyACoffee({ id, image, description, title, categories, footer }: CoffeeProps) {
   const { cartItems, addToCart, increaseQuantity, decreaseQuantity } = useCart();
@@ -48,10 +49,13 @@ export function BuyACoffee({ id, image, description, title, categories, footer }
             cartItems={cartItems}
           />
 
-
-            <button className="ShoppingCart" type="button">
-            <ShoppingCart size={29} weight="fill" />
-          </button>
+            <NavLink  to="/shopping" title="cart">
+              <button className="ShoppingCart" type="button">
+                <ShoppingCart size={29} weight="fill" />
+              </button>
+            </NavLink>
+            
+           
         </section>
       </Content>
     </ComprasDeCafe>
@@ -70,9 +74,9 @@ export function Home() {
             <QualitysBrandConatiner>
               <div>
                 <p>
-                  <span className="ShoppingCart">
-                    <ShoppingCart size={22} weight="fill" />
-                  </span>
+                    <span className="ShoppingCart">
+                      <ShoppingCart size={22} weight="fill" />
+                    </span>
                   Compra simples e segura
                 </p>
               </div>

@@ -21,7 +21,10 @@ const { cartItems } = useCart();
 
   return (
     <ContainerHeader $isScrolled={isScrolled} className={isScrolled ? 'containerScrolled' : 'containerNotScrolled'}>
-  <img src={LogoCoffee} alt="Logo Coffee" />
+  <NavLink to="/" title="locale">
+      <img src={LogoCoffee} alt="Logo Coffee" />
+    </NavLink>
+
   <nav>
     <NavLink className="map" to="/" title="locale">
       <MapPin size={23} weight="fill" />
@@ -29,7 +32,7 @@ const { cartItems } = useCart();
     </NavLink>
 
     <CartContainer>
-  <NavLink className="cart" to="" title="cart">
+  <NavLink className="cart" to="/shopping" title="cart">
     <ShoppingCart size={23} weight="fill" />
   </NavLink>
      {cartItems.length > 0 && (

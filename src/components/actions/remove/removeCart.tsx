@@ -7,7 +7,7 @@ interface RemoveButtonProps {
   id: number;
 }
 
-export function RemoveButton({ id }: RemoveButtonProps) {
+export default function RemoveButton({ id }: RemoveButtonProps) {
   const { cartItems, setCartItems } = useCart();
 
   function handleRemove() {
