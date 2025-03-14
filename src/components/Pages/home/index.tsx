@@ -1,30 +1,15 @@
 import React from "react";
 import café from '../../../assets/café.svg';
-import { ComprasDeCafe, ContainerCoffee, ContainerAll, QuantityControl, Content } from './ListaDeCafés';
+import { ComprasDeCafe, ContainerCoffee, ContainerAll, Content } from './ListaDeCafés';
 import { Package, ShoppingCart, Timer, Coffee, Minus, Plus } from "phosphor-react";
 import { ContainerShop, QualitysBrandConatiner, Rodape, SeparatorImage } from './styles';
 import { coffeeList } from "./cafés";
 import type { CoffeeProps } from "./cafés";
 import { useCart } from '../../../context/cartContext';
+import { QuantityControls } from '../../actions/quantityControls/QuantityControls';
 
 export function BuyACoffee({ id, image, description, title, categories, footer }: CoffeeProps) {
-  const { addToCart, increaseQuantity, decreaseQuantity, cartItems } = useCart();
-
-  const coffeeInCart = cartItems.find((item) => item.id === id);
-
-  const handleIncrease = () => {
-    if (coffeeInCart) {
-      increaseQuantity(id);
-    } else {
-      addToCart({ id, image, description, title, categories, footer, quantity: 1 });
-    }
-  };
-
-  const handleDecrease = () => {
-    if (coffeeInCart && coffeeInCart.quantity > 0) {
-      decreaseQuantity(id);
-    }
-  };
+  const { cartItems, addToCart, increaseQuantity, decreaseQuantity } = useCart();
 
   return (
     <ComprasDeCafe>
@@ -46,22 +31,25 @@ export function BuyACoffee({ id, image, description, title, categories, footer }
                 minimumFractionDigits: 2
               })}
             </span>
-
           </p>
 
-          <QuantityControl>
-            <button type="button" onClick={handleDecrease}>
-              <Minus size={17} weight='bold' />
-            </button>
+      
+          <QuantityControls
+            id={id}
+            image={image}
+            description={description}
+            title={title}
+            footer={footer}
+            quantity={0} 
+            categories={[]}
+            addToCart={addToCart}
+            increaseQuantity={increaseQuantity}
+            decreaseQuantity={decreaseQuantity}
+            cartItems={cartItems}
+          />
 
-            <span>{coffeeInCart?.quantity || 0}</span>
-            
-            <button type="button" onClick={handleIncrease}>
-              <Plus size={17} weight='bold' />
-            </button>
-          </QuantityControl>
 
-          <button className="ShoppingCart" type="button">
+            <button className="ShoppingCart" type="button">
             <ShoppingCart size={29} weight="fill" />
           </button>
         </section>

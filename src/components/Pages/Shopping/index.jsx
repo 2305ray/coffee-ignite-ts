@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money, Trash, Minus, Plus} from 'phosphor-react';
+import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money, Trash} from 'phosphor-react';
 import { 
     ContainerCompletePedido, 
     Container, 
@@ -18,6 +18,9 @@ import {
     ContainerCafesSelecionados,
 } from './styles';
 import { coffeeList } from '../home/cafés'
+import { QuantityControls } from '../../actions/quantityControls/QuantityControls';
+import { RemoveButton } from '../../actions/remove/removeCart'
+
 
 
 export function Shopping() {
@@ -94,20 +97,14 @@ export function Shopping() {
                     <CoffeeInfo>
                         <SelecionadosName>
                         <p>{cafe.title}</p>
-                        <p className="price">{cafe.footer}</p>
+                        <p className="price">{cafe.footer.toLocaleString('pt-BR', {
+                            minimumFractionDigits: 2
+                        })}</p>
                         </SelecionadosName>    
 
                         <ButtonsContent>
-                        <div className="QuantityControl">
-                            <button type="button"><Minus size={17} weight="bold" /></button>
-                            <span>{cafe.quantidade}</span>
-                            <button type="button"><Plus size={17} weight="bold" /></button>
-                        </div>
-
-                        <button className="remover" type="button">
-                            <Trash size={20} color="#8047F8" />
-                            Remover
-                        </button>
+                        <QuantityControls />
+                        <RemoveButton className="remover" id={cafe.id} />
                         </ButtonsContent>
                     </CoffeeInfo>
                     </HeaderSelectCoffee>

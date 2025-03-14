@@ -1,6 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import type {ReactNode} from 'react'
-import React from 'react'
+import React, { createContext, useState, useContext } from 'react';
+import type { ReactNode, Dispatch, SetStateAction } from 'react';
 
 export interface CartItem {
   id: number;
@@ -12,12 +11,14 @@ export interface CartItem {
  footer: number;
 }
 
-interface CartContextType {
+export interface CartContextType {
   cartItems: CartItem[];
+  setCartItems: Dispatch<SetStateAction<CartItem[]>>;
   addToCart: (item: CartItem) => void;
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
 }
+
 
 const CartContext = createContext({} as CartContextType);
 
@@ -60,7 +61,7 @@ function addToCart(newItem: CartItem) {
   }
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, increaseQuantity, decreaseQuantity }}>
+    <CartContext.Provider value={{ cartItems, addToCart, increaseQuantity, decreaseQuantity, setCartItems, }}>
       {children}
     </CartContext.Provider>
   );
