@@ -24,19 +24,21 @@ const CartContext = createContext({} as CartContextType);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  function addToCart(newItem: CartItem) {
-    const itemExists = cartItems.find(item => item.id === newItem.id)
+  function addToCart(item: CartItem) {
+  setCartItems((prevItems) => {
+    const itemExists = prevItems.find((cartItem) => cartItem.id === item.id);
 
-    const updatedCart = itemExists
-      ? cartItems.map(item =>
-          item.id === newItem.id
-            ? { ...item, quantity: item.quantity + newItem.quantity }
-            : item
-        )
-      : [...cartItems, newItem]
+    if (itemExists) {
+      return prevItems.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem
+      );
+    }
 
-    setCartItems(updatedCart)
-  }
+    return [...prevItems, { ...item, quantity: 1 }];
+  });
+}
 
   function increaseQuantity(id: number) {
     const updatedCart = cartItems.map(item =>

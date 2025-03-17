@@ -1,13 +1,9 @@
 import { Minus, Plus } from "phosphor-react";
-import React from "react";
-import { QuantityControl } from "./controls"
+import { QuantityControl } from "./controls";
 import { useCart } from "../../../context/cartContext";
-import {
-  getCoffeeInCart,
-  handleIncrease,
-  handleDecrease,
-} from "./quantityControl";
+import React from "react";
 import type { CartItem } from "../../../context/cartContext";
+
 
 interface QuantityControlProps {
   id: number;
@@ -17,6 +13,7 @@ interface QuantityControlProps {
   footer: number;
   quantity: number; 
   categories: string[];
+
   addToCart: (item: CartItem) => void;
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
@@ -34,14 +31,12 @@ export function QuantityControls({
 }: QuantityControlProps) {
   const { cartItems, addToCart, increaseQuantity, decreaseQuantity } = useCart();
 
-  const coffeeInCart = getCoffeeInCart(id, cartItems);
+  const coffeeInCart = cartItems.find(item => item.id === id);
+ const quantity = coffeeInCart?.quantity || 0; 
 
   return (
     <QuantityControl>
-      <button
-        type="button"
-        onClick={() => handleDecrease(id, decreaseQuantity, cartItems)}
-      >
+      <button type="button" onClick={() => decreaseQuantity(id)}>
         <Minus size={17} weight="bold" />
       </button>
 
@@ -50,20 +45,15 @@ export function QuantityControls({
       <button
         type="button"
         onClick={() =>
-          handleIncrease(Number(id), 
-          { 
+          addToCart({
             id,
             image,
             description,
             title,
             categories,
             footer,
-            quantity: 1  
-          },
-            addToCart,
-            increaseQuantity, 
-            cartItems
-          )
+            quantity: quantity + 1 
+          })
         }
       >
         <Plus size={17} weight="bold" />

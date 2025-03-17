@@ -9,8 +9,11 @@ import { useCart } from '../../../context/cartContext';
 import { QuantityControls } from '../../actions/quantityControls/QuantityControls';
 import { NavLink } from "react-router-dom";
 
+
+
 export function BuyACoffee({ id, image, description, title, categories, footer }: CoffeeProps) {
   const { cartItems, addToCart, increaseQuantity, decreaseQuantity } = useCart();
+  const coffeeInCart = cartItems.find(item => item.id === id);
 
   return (
     <ComprasDeCafe>
@@ -41,13 +44,15 @@ export function BuyACoffee({ id, image, description, title, categories, footer }
             description={description}
             title={title}
             footer={footer}
-            quantity={0} 
-            categories={[]}
+            quantity={coffeeInCart?.quantity || 0} 
+            categories={categories}
             addToCart={addToCart}
             increaseQuantity={increaseQuantity}
             decreaseQuantity={decreaseQuantity}
             cartItems={cartItems}
           />
+
+
 
             <NavLink  to="/shopping" title="cart">
               <button className="ShoppingCart" type="button">

@@ -98,7 +98,16 @@ export function Shopping() {
                   </SelecionadosName>    
 
                   <ButtonsContent>
-                    <QuantityControls quantity={cafe.quantity} />
+                    <QuantityControls 
+                      id={cafe.id} 
+                      quantity={cafe.quantity} 
+                      image={cafe.image}
+                      title={cafe.title}
+                      description={cafe.description}
+                      footer={cafe.footer}
+                      categories={cafe.categories}
+                    />
+
                     <RemoveButton id={cafe.id} />
                   </ButtonsContent>
                 </CoffeeInfo>
