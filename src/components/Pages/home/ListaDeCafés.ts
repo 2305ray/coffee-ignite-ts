@@ -94,41 +94,7 @@ export const ComprasDeCafe = styled.div`
     flex-grow: 0;
   }
 
-  button {
-    background: ${props => props.theme["GRAY-100"]};
-    border-radius: 8px;
-    border: none;
-    width: 4.5rem;
-    height: 3rem;
-    opacity: 0.7;
-    font-size: 1.2rem;
-  }
-
-  .ShoppingCart {
-    color: ${props => props.theme["WHITE-100"]};
-    background: ${props => props.theme["PURPLE-500"]};
-    width: 3rem;
-    height: 3rem;
-    opacity: 1;
-    padding: 0.6rem;
-    transition: transform 0.1s ease, background-color 0.2s ease;
-  }
-
-  .ShoppingCart:hover {
-    background: ${props => props.theme["PURPLE-300"]};
-    transform: scale(1.1);
-    cursor: pointer;
-    box-shadow: ${(props) => props.theme["PURPLE-500"]} 0 4px 5px;
-  }
-
-  .ShoppingCart:focus {
-    outline: none;
-  }
-
-  .ShoppingCart:active {
-    transform: translateY(2px);
-    box-shadow: ${(props) => props.theme["PURPLE-500"]} 0 2px 0;
-  }
+  
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;

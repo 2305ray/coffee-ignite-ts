@@ -8,7 +8,7 @@ import type { CoffeeProps } from "./cafés";
 import { useCart } from '../../../context/cartContext';
 import { QuantityControls } from '../../actions/quantityControls/QuantityControls';
 import { NavLink } from "react-router-dom";
-
+import { CarrinhoButton } from "../../actions/cartButton/cartButton";
 
 
 export function BuyACoffee({ id, image, description, title, categories, footer }: CoffeeProps) {
@@ -52,13 +52,9 @@ export function BuyACoffee({ id, image, description, title, categories, footer }
             cartItems={cartItems}
           />
 
-
-
-            <NavLink  to="/shopping" title="cart">
-              <button className="ShoppingCart" type="button">
-                <ShoppingCart size={29} weight="fill" />
-              </button>
-            </NavLink>
+           
+              <CarrinhoButton />
+          
             
            
         </section>
