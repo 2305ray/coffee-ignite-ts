@@ -53,7 +53,7 @@ export const ContainerHeader = styled.header<HeaderProps>`
     a.cart {
         background: ${(props) => props.theme["YELLOW-100"]};
         transition: background-color 0.3s ease; /* Suaviza a transição do hover */
-
+        pointer-events: none;
       
     }
 

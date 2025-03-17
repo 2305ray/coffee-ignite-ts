@@ -89,12 +89,14 @@ export function Shopping() {
           {cartItems.map(cafe => (
             <ContainerCafesSelecionados key={cafe.id}>
               <HeaderSelectCoffee>
-                <img src={cafe.image} alt={cafe.title} />
+                <img className="image" src={cafe.image} alt={cafe.title} />
 
                 <CoffeeInfo>
                   <SelecionadosName>
                     <p>{cafe.title}</p>
-                    <p className="price">R$ {cafe.footer.toFixed(2)}</p>
+                    <p className="price">R$ {cafe.footer.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2
+              })}</p>
                   </SelecionadosName>    
 
                   <ButtonsContent>
@@ -115,9 +117,6 @@ export function Shopping() {
             </ContainerCafesSelecionados>
           ))}
 
-          <footer>
-            <button type="submit">Confirmar Pedido</button>
-          </footer>
 
           <div>
                         <div>

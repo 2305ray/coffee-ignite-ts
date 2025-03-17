@@ -246,10 +246,11 @@ export const HeaderSelectCoffee = styled.div`
   padding-bottom: 2rem;
   border-bottom: 3px solid ${props => props.theme["WHITE-500"]};
   margin-bottom: 2rem;
- & .image {
-  width: 10rem;
-  height: 5.5rem;
- }
+
+  & .image {
+    width: 10rem;
+    height: 5.6rem;
+  }
 `;
 
 export const CoffeeInfo = styled.div`

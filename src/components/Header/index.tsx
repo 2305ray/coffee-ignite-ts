@@ -32,7 +32,7 @@ const { cartItems } = useCart();
     </NavLink>
 
     <CartContainer>
-  <NavLink className="cart" to="/shopping" title="cart">
+  <NavLink className="cart" to="/" title="cart">
     <ShoppingCart size={23} weight="fill" />
   </NavLink>
      {cartItems.length > 0 && (

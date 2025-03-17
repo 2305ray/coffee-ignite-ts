@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import type { ReactNode, Dispatch, SetStateAction } from 'react';
 
 export interface CartItem {
@@ -22,23 +22,31 @@ interface CartContextType {
 const CartContext = createContext({} as CartContextType);
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    const storedCart = localStorage.getItem('@myapp:cart');
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
+
+  // ✅ Salvar no localStorage sempre que o cartItems mudar
+  useEffect(() => {
+    localStorage.setItem('@myapp:cart', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   function addToCart(item: CartItem) {
-  setCartItems((prevItems) => {
-    const itemExists = prevItems.find((cartItem) => cartItem.id === item.id);
+    setCartItems((prevItems) => {
+      const itemExists = prevItems.find((cartItem) => cartItem.id === item.id);
 
-    if (itemExists) {
-      return prevItems.map((cartItem) =>
-        cartItem.id === item.id
-          ? { ...cartItem, quantity: cartItem.quantity + 1 }
-          : cartItem
-      );
-    }
+      if (itemExists) {
+        return prevItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        );
+      }
 
-    return [...prevItems, { ...item, quantity: 1 }];
-  });
-}
+      return [...prevItems, { ...item, quantity: 1 }];
+    });
+  }
 
   function increaseQuantity(id: number) {
     const updatedCart = cartItems.map(item =>
