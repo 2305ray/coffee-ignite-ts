@@ -16,6 +16,7 @@ import {
   SelecionadosName,
   ButtonsContent,
   ContainerCafesSelecionados,
+  SomaItens,
 } from './styles';
 
 import { QuantityControls } from '../../actions/quantityControls/QuantityControls';
@@ -118,26 +119,18 @@ export function Shopping() {
           ))}
 
 
-          <div>
-                        <div>
-                            <p>Total de itens</p>
-                            <p>R$ 29,70</p>
-                        </div>
-
-                        <div>
-                            <p>Entrega</p>
-                            <p>R$ 3,50</p>
-                        </div>
-
-                        <div>
-                            <p>Total</p>
-                            <p>R$ 33,20</p>
-                        </div>
-
+          <SomaItens>
+                        
+                            <p>Total de itens <span>R$ 29,70</span></p>
+                        
+                            <p>Entrega <span>R$ 3,50</span></p>
+                  
+                            <p>Total <span>R$ 33,20</span></p>
+                          
                         <footer>
                             <button type="submit">Confirmar Pedido</button>
                         </footer>
-                    </div>
+                    </SomaItens>
         </ContainerSelectCoffees>
       </section>
     </Container>

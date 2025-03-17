@@ -317,4 +317,21 @@ export const ButtonsContent = styled.div`
 `;
 
 
+export const SomaItens = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+gap: 1.5rem;
+justify-content: space-between;
 
+ p {
+  display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  span {
+    justify-content: space-between;
+    margin-left: auto; 
+  }
+`;
