@@ -125,7 +125,7 @@ export function Shopping() {
                         
                             <p>Entrega <span>R$ 3,50</span></p>
                   
-                            <p>Total <span>R$ 33,20</span></p>
+                            <p className="total">Total <span className="total">R$ 33,20</span></p>
                           
                         <footer>
                             <button type="submit">Confirmar Pedido</button>

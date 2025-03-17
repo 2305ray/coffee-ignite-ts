@@ -333,5 +333,37 @@ justify-content: space-between;
   span {
     justify-content: space-between;
     margin-left: auto; 
+    font-size: 1.1rem;
   }
+
+  .total{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: ${props => props.theme['GRAY-500']};
+  }
+
+  button {
+    color: ${props => props.theme['WHITE-100']};
+    background: ${props => props.theme['YELLOW-300']};
+    font-weight: bold;
+    width: 100%;
+    height: 3.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+   button:hover {
+      background: ${props => props.theme['YELLOW-500']};
+    }
+
+    Button:focus {
+    outline: none; 
+    box-shadow: none; 
+}
+
+ button:active {
+      transform: scale(0.9); 
+    }
 `;

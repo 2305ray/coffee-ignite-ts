@@ -52,36 +52,21 @@ export const ContainerHeader = styled.header<HeaderProps>`
 
     a.cart {
         background: ${(props) => props.theme["YELLOW-100"]};
-        transition: background-color 0.3s ease; /* Suaviza a transição do hover */
+        transition: background-color 0.3s ease; 
         pointer-events: none;
       
     }
 
-     a.cart:hover {
-    background: ${(props) => props.theme["YELLOW-300"]}; /* Altere a cor de fundo ao passar o mouse */
-     
-     &:active {
-      transform: scale(0.9); /* Reduz um pouco o ícone ao clicar */
-    }
-}
-
-    a.cart:focus {
-    outline: none; /* Remove a borda de foco no estado de foco */
-    box-shadow: none; /* Remove qualquer sombra de foco que possa aparecer */
-}
-
+  
     a.map svg {
         color: ${(props) => props.theme["PURPLE-300"]};
     }
 
     a.cart svg {
         color: ${(props) => props.theme["YELLOW-500"]};
-        transition: color 0.3s ease; /* Suaviza a transição da cor do ícone */
+       
     }
 
-     a.cart:hover svg {
-    color: ${(props) => props.theme["WHITE-200"]}; /* Altere a cor do ícone ao passar o mouse */
-}
   }
 
 `;
