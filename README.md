@@ -1,4 +1,4 @@
-<h1 align="center"> Todo List </h1>
+<h1 align="center"> Coffee Delivery </h1>
 
 <p align="center">
   Plataforma para visualização e compra de cafés especiais. <br>
