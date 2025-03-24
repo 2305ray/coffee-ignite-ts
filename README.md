@@ -25,7 +25,7 @@
 <br>
 
 <div align="center">
-  <img alt="timer" src="https://github.com/2305ray/TodoList/blob/main/img/Cover%20(1).png" width="90%">
+  <img alt="timer" src="https://github.com/2305ray/coffee-ignite-ts/blob/main/src/assets/readmeCover/Cover%20(2).png" width="90%">
 </div>
 
    ---
@@ -36,10 +36,13 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - **React.js** – Biblioteca para construção da interface do usuário.
 - **Vite** – Ferramenta de build rápida e otimizada para projetos React.
-- **CSS Module** – Módulos CSS para estilização encapsulada e modular.
-- **JavaScript** – Linguagem de programação utilizada para a lógica da aplicação.
+- **Styled Components** – Biblioteca para estilização de componentes utilizando CSS-in-JS.
+- **TypeScript** – Superset do JavaScript que adiciona tipagem estática e segurança ao código.
 - **Phosphor-react** – Biblioteca de ícones SVG flexível e altamente personalizável.
-- **ESLint** – Ferramenta para análise e padronização do código, garantindo boas práticas e melhor legibilidade.
+- **ESLint e Prittier** –  Ferramentas para análise, padronização e formatação do código, garantindo boas práticas e melhor legibilidade.
+- **Uuid** – Biblioteca para geração de identificadores únicos universais (UUIDs).
+- **Yup** –  Biblioteca para validação de esquemas de dados, útil para formulários e inputs
+- **Axios** – Cliente HTTP que facilita a comunicação com APIs e servidores.
 
 
 
@@ -58,8 +61,9 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ### 💻 **Versão Desktop**
 <div align="center">
-  <img alt="todoList home" src="https://github.com/2305ray/TodoList/blob/main/img/Todo%20-%20Empty.png" width="75%">
-  <img alt="todoList tasks" src="https://github.com/2305ray/TodoList/blob/main/img/Todo.png" width="75%">
+  <img alt="coffee home" src="https://github.com/2305ray/coffee-ignite-ts/blob/main/src/assets/readmeCover/Coffee%20Delivery%20-%20Home.png" width="75%">
+  <img alt="coffee checkout" src="https://github.com/2305ray/coffee-ignite-ts/blob/main/src/assets/readmeCover/Coffee%20Delivery%20-%20Checkout.png" width="75%">
+   <img alt="coffee success" src="https://github.com/2305ray/coffee-ignite-ts/blob/main/src/assets/readmeCover/Coffee%20Delivery%20-%20Success.png" width="75%">
 </div>
 
 --- 
@@ -68,11 +72,11 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/2305ray/TodoList.git
+   git clone https://github.com/2305ray/coffee-ignite-ts.git
    ```
 2. Acesse a pasta do projeto:
    ```bash
-   cd TodoList
+   cd coffee-ignite-ts
    ```
 3. Instale as dependências:
    ```bash
