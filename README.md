@@ -11,9 +11,9 @@
 
 <div align="center">
   
-[![Tecnologias](https://img.shields.io/badge/Tecnologias-purple?style=for-the-badge)](#tecnologias)
-[![Projeto](https://img.shields.io/badge/Projeto-blue?style=for-the-badge)](#projeto)
-[![Layout](https://img.shields.io/badge/Layout-red?style=for-the-badge)](#layout)
+[![Tecnologias](https://img.shields.io/badge/Tecnologias-purple?style=for-the-badge)](#-tecnologias)
+[![Projeto](https://img.shields.io/badge/Projeto-blue?style=for-the-badge)](#-projeto)
+[![Layout](https://img.shields.io/badge/Layout-red?style=for-the-badge)](#-layout)
 
 
 </div>
